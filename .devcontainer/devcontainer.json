@@ -1,0 +1,33 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.154.0/containers/ruby-rails
+{
+  "name": "Rails Interview Project",
+  "dockerComposeFile": "./docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/rails-interview-project",
+  "shutdownAction": "stopCompose",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    // Utility
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "editorconfig.editorconfig",
+    "oderwat.indent-rainbow",
+    "mikestead.dotenv",
+    // Ruby
+    "wingrunr21.vscode-ruby",
+    "rebornix.Ruby",
+    "castwide.solargraph"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [],
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "",
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
+}

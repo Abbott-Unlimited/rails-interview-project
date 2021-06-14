@@ -43,6 +43,20 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Ruby linter and formatter
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+
+  # Intellisense
+  gem 'solargraph', require: false
+
+  # Code Smell
+  gem 'reek' , require: false
+
+  # Ruby plugins required for VSCode plugins
+  gem 'ruby-debug-ide', require: false
+  gem 'debase', require: false
 end
 
 gem 'markdown-rails'

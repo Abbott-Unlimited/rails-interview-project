@@ -1,0 +1,27 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Required Gems",
+      "type": "shell",
+      "command": "rm -f Gemfile.lock && export BUNDLE_GEM__FURY__IO=$(cat ~/.gemfury) && bundle install",
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "Update Required Gems",
+      "type": "shell",
+      "command": "rm -f Gemfile.lock && export BUNDLE_GEM__FURY__IO=$(cat ~/.gemfury) && bundle update",
+      "isBackground": false,
+      "problemMatcher": []
+    },
+    {
+      "label": "Test",
+      "type": "shell",
+      "command": "rake test",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "cSpell.enableFiletypes": [
+    "ruby"
+  ],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".devcontainer",
+    ".vscode",
+    ".vscode-insiders",
+    "Gemfile.lock"
+  ],
+  "cSpell.words": [],
+  "editor.formatOnSave": true,
+  "indentRainbow.ignoreErrorLanguages": [
+    "ruby",
+    "markdown"
+  ],
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
+  "ruby.format": "rubocop",
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true,
+    },
+    "reek": {
+      "useBundler": true,
+    },
+  },
+  "solargraph.useBundler": true,
+  "todo-tree.filtering.includeHiddenFiles": true,
+  "todo-tree.general.tags": [
+    "@bug",
+    "@todo",
+    "@security"
+  ],
+  "todo-tree.highlights.customHighlight": {
+    "@bug": {
+      "type": "text",
+      "icon": "alert",
+      "background": "#606000",
+      "foreground": "#CCC",
+      "iconColour": "yellow",
+      "gutterIcon": true
+    },
+    "@security": {
+      "type": "text",
+      "icon": "alert",
+      "background": "#600000",
+      "foreground": "#CCC",
+      "iconColour": "red",
+      "gutterIcon": true
+    }
+  }
+}
