@@ -9,7 +9,7 @@ services:
       args:
         # Update 'VARIANT' to pick a Ruby version: 2, 2.7, 2.6, 2.5
         VARIANT: "2.6"
-        INSTALL_NODE: "false"
+        INSTALL_NODE: "true"
         # NODE_VERSION: "lts/*"
     volumes:
       # Change to reflect the workspace directory
