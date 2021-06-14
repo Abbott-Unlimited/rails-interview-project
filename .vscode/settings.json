@@ -12,7 +12,11 @@
     ".vscode-insiders",
     "Gemfile.lock"
   ],
-  "cSpell.words": [],
+  "cSpell.words": [
+    "bootsnap",
+    "passw",
+    "railties"
+  ],
   "editor.formatOnSave": true,
   "indentRainbow.ignoreErrorLanguages": [
     "ruby",
