@@ -17,7 +17,7 @@ services:
       - ~/.ssh:/home/vscode/.ssh/
       - ~/.gitconfig:/home/vscode/.gitconfig
       - ~/.netrc:/home/vscode/.netrc
-    #ports:
-    #  - "8080:3000"
-    #  - "4443:5000"
+    ports:
+      - "3000:3000"
+      #  - "4443:5000"
     tty: true

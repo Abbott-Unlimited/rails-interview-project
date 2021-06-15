@@ -23,5 +23,28 @@
       "isBackground": false,
       "problemMatcher": []
     },
+    {
+      "label": "Preview",
+      "type": "shell",
+      "isBackground": true,
+      "command": "bundle exec rails s -b 0.0.0.0",
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Puma starting",
+            "endsPattern": "\\* Listening on"
+          }
+        }
+      ]
+    }
   ]
 }

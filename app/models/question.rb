@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Question asked by a user
-class Question < ActiveRecord::Base
+class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
   belongs_to :user
 

@@ -17,7 +17,8 @@
     "bootsnap",
     "datetime",
     "passw",
-    "railties"
+    "railties",
+    "sqlite"
   ],
   "editor.formatOnSave": true,
   "indentRainbow.ignoreErrorLanguages": [

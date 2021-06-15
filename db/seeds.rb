@@ -9,6 +9,8 @@
 require 'ffaker'
 
 # Tenants
+Tenant.create(name: 'Tenant 1', api_key: '4289fb617fb3cc1a245ef7cb26a37e8d')
+
 10.times do
   Tenant.create(name: FFaker::Company.name)
 end
@@ -21,9 +23,9 @@ end
 
 # Questions and Answers
 20.times do
-  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, "?"),
-    private: FFaker::Boolean.random, user: users.sample)
-  (1 + rand(3)).times do
+  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, '?'),
+                             private: FFaker::Boolean.random, user: users.sample)
+  rand(1..3).times do
     question.answers.create(body: FFaker::HipsterIpsum.sentence, user: users.sample)
   end
 end

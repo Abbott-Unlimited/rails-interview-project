@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # API users
-class Tenant < ActiveRecord::Base
+class Tenant < ApplicationRecord
   before_create :generate_api_key
 
   # Check if the Tenant is throttled due to too many API requests
