@@ -11,6 +11,8 @@ require 'ffaker'
 # Random number generator
 rand_num = Random.new
 
+Tenant.create(name: FFaker::Company.name, calls_today: 95, calls_lifetime: 1000, last_call: Time.new)
+
 10.times do
   Tenant.create(
     name: FFaker::Company.name,

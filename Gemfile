@@ -31,6 +31,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Dynamic environment variables
   gem 'dotenv-rails'
+  # Colorize console output
+  gem 'colorize'
 end
 
 group :development do
