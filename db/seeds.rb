@@ -8,11 +8,16 @@
 
 require 'ffaker'
 
-# Tenants
-Tenant.create(name: 'Tenant 1', api_key: '4289fb617fb3cc1a245ef7cb26a37e8d')
+# Random number generator
+rand_num = Random.new
 
 10.times do
-  Tenant.create(name: FFaker::Company.name)
+  Tenant.create(
+    name: FFaker::Company.name,
+    calls_today: rand_num.rand(10..150),
+    calls_lifetime: rand_num.rand(1200..5000),
+    last_call: Time.new - rand_num.rand(0..60).seconds
+  )
 end
 
 # Users

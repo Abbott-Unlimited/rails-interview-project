@@ -28,6 +28,6 @@ class Tenant < ApplicationRecord
   # Generate a new API key for the Tenant and set the api_key attribute
   # @return [String] 32-digit hexadecimal
   def generate_api_key
-    self.api_key = SecureRandom.hex(16)
+    self.api_key ||= SecureRandom.hex(16)
   end
 end
