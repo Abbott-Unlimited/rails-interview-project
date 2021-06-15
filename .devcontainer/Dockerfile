@@ -9,6 +9,11 @@ RUN if [ "${INSTALL_NODE}" = "true" ]; then \
   su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1" \
   ; fi
 
+ARG INSTALL_YARN="false"
+RUN if [ "${INSTALL_YARN}" = "true" ]; then \
+  npm install --global yarn \
+  ; fi
+
 # Update lists
 RUN apt -y update && apt -y upgrade
 

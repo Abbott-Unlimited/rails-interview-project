@@ -11,6 +11,7 @@ services:
         VARIANT: "2.6"
         INSTALL_NODE: "true"
         # NODE_VERSION: "lts/*"
+        INSTALL_YARN: "true"
     volumes:
       # Change to reflect the workspace directory
       - ..:/workspaces/rails-interview-project:cached
