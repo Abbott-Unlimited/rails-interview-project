@@ -13,7 +13,9 @@
     "Gemfile.lock"
   ],
   "cSpell.words": [
+    "CSRF",
     "bootsnap",
+    "datetime",
     "passw",
     "railties"
   ],

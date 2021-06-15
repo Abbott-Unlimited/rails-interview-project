@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2016_05_12_220935) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -26,13 +28,20 @@ ActiveRecord::Schema.define(version: 2016_05_12_220935) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["private"], name: "index_questions_on_private"
+    t.index ["title"], name: "index_questions_on_title"
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "tenants", force: :cascade do |t|
     t.string "name", null: false
     t.string "api_key", null: false
+    t.integer "calls_today", default: 0, null: false
+    t.integer "calls_lifetime", default: 0, null: false
+    t.datetime "last_call"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["api_key"], name: "index_tenants_on_api_key"
   end
 
   create_table "users", force: :cascade do |t|
