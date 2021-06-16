@@ -14,7 +14,7 @@ class Question < ApplicationRecord
     # @todo should use a serializer in the real world
     # @todo should page questions in real world
     joins(:user)
-      .select(:id, :title, 'users.name AS user')
+      .select(:id, :title, 'users.id AS user_id', 'users.name AS user')
       .where(include_private ? nil : { private: false })
       .where(search.present? ? "questions.title LIKE '%#{search}%'" : nil)
       .order(:id)
@@ -26,6 +26,6 @@ class Question < ApplicationRecord
   # Answers for this question with the user association
   # @return [Answer::ActiveRecord_Relation]
   def answers_with_users
-    answers.joins(:user).select(:id, :body, 'users.name as user').order(:id)
+    answers.joins(:user).select(:id, :body, 'users.id AS user_id', 'users.name as user').order(:id)
   end
 end

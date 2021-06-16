@@ -19,7 +19,7 @@ class TenantsControllerTest < ActionController::TestCase
     response = JSON.parse(@response.body)
     assert_instance_of(Array, response)
     assert_equal(2, response.count)
-    assert_equal('id, title, user, answers', response[0].keys.join(', '))
+    assert_equal('id, title, user_id, user, answers', response[0].keys.join(', '))
     # rest is tested in Question#q_and_a
   end
 
