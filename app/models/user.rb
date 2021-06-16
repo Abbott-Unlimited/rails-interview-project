@@ -1,6 +1,7 @@
-class User < ActiveRecord::Base
+# frozen_string_literal: true
 
-  has_many :questions, inverse_of: :asker
-  has_many :answers,   inverse_of: :answerer
-
+# User
+class User < ApplicationRecord
+  has_many :questions, inverse_of: :user
+  has_many :answers,   inverse_of: :user
 end

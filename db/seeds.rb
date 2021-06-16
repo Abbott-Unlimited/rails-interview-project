@@ -8,9 +8,18 @@
 
 require 'ffaker'
 
-# Tenants
+# Random number generator
+rand_num = Random.new
+
+Tenant.create(name: FFaker::Company.name, calls_today: 95, calls_lifetime: 1000, last_call: Time.new)
+
 10.times do
-  Tenant.create(name: FFaker::Company.name)
+  Tenant.create(
+    name: FFaker::Company.name,
+    calls_today: rand_num.rand(10..150),
+    calls_lifetime: rand_num.rand(1200..5000),
+    last_call: Time.new - rand_num.rand(0..60).seconds
+  )
 end
 
 # Users
@@ -21,9 +30,9 @@ end
 
 # Questions and Answers
 20.times do
-  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, "?"),
-    private: FFaker::Boolean.random, user: users.sample)
-  (1 + rand(3)).times do
+  question = Question.create(title: FFaker::HipsterIpsum.sentence.gsub(/\.$/, '?'),
+                             private: FFaker::Boolean.random, user: users.sample)
+  rand(1..3).times do
     question.answers.create(body: FFaker::HipsterIpsum.sentence, user: users.sample)
   end
 end

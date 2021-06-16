@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  app:
+    user: vscode
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        # Update 'VARIANT' to pick a Ruby version: 2, 2.7, 2.6, 2.5
+        VARIANT: "2.6"
+        INSTALL_NODE: "true"
+        # NODE_VERSION: "lts/*"
+        INSTALL_YARN: "true"
+    volumes:
+      # Change to reflect the workspace directory
+      - ..:/workspaces/rails-interview-project:cached
+      - ~/.ssh:/home/vscode/.ssh/
+      - ~/.gitconfig:/home/vscode/.gitconfig
+      - ~/.netrc:/home/vscode/.netrc
+    ports:
+      - "3000:3000"
+      #  - "4443:5000"
+    tty: true

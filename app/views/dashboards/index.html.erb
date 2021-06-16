@@ -1,0 +1,35 @@
+<h1><%= t(:dashboard_title) %></h1>
+
+<table>
+  <tbody>
+
+    <tr>
+      <td class="item"><%= Question.model_name.human(count: 2) %></td>
+      <td class="item"><%= Answer.model_name.human(count: 2) %></td>
+    </tr>
+    <tr>
+      <td class="data"><%= Question.count.to_s(:delimited) %></td>
+      <td class="data"><%= Answer.count.to_s(:delimited) %></td>
+    </tr>
+    <tr>
+      <td class="item"><%= User.model_name.human(count: 2) %></td>
+      <td class="item"><%= Tenant.model_name.human(count: 2) %></td>
+    </tr>
+    <tr>
+      <td class="data"><%= User.count.to_s(:delimited) %></td>
+      <td class="data"><%= Tenant.count.to_s(:delimited) %></td>
+    </tr>
+    <tr>
+      <td class="item"><%= t(:tenant_api_calls_today) %></td>
+      <td class="item"><%= t(:tenant_api_calls_lifetime) %></td>
+    </tr>
+    <tr>
+      <td class="data"><%= Tenant.sum(:calls_today).to_s(:delimited) %></td>
+      <td class="data"><%= Tenant.sum(:calls_lifetime).to_s(:delimited) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <%= t(:footer) %>, <a href='https://linkedin.com/in/jayknott' target='_blank'><%= t(:applicant) %></a>
+</p>
